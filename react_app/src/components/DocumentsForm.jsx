@@ -36,7 +36,7 @@ function DocumentForm({ handleAddDocument }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="nome">Nome:</label>
+      <label htmlFor="nome">Nome: </label>
       <input
         type="text"
         id="nome"
@@ -46,7 +46,7 @@ function DocumentForm({ handleAddDocument }) {
       />
       <br />
       <br />
-      <label htmlFor="arquivo">Arquivo:</label>
+      <label htmlFor="arquivo">Arquivo: </label>
       <input
         type="file"
         id="arquivo"
