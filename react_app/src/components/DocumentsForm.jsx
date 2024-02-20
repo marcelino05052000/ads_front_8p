@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 function DocumentForm({ handleAddDocument }) {
   const [nome, setNome] = useState("");
-  const [tipo, setTipo] = useState("texto"); // Initialize tipo with "texto"
   const [file, setFile] = useState(null); // State to store the selected file
 
   const handleSubmit = async (e) => {
@@ -17,13 +16,6 @@ function DocumentForm({ handleAddDocument }) {
         return;
       }
       formData.append("nome", nome);
-
-      // Append tipo to the form data
-      if (!tipo) {
-        alert("Por favor, selecione um tipo.");
-        return;
-      }
-      formData.append("tipo", tipo);
 
       // Handle file upload
       if (!file) {
@@ -54,25 +46,11 @@ function DocumentForm({ handleAddDocument }) {
       />
       <br />
       <br />
-      <label htmlFor="tipo">Tipo:</label>
-      <select
-        id="tipo"
-        name="tipo"
-        value={tipo}
-        onChange={(e) => setTipo(e.target.value)}
-      >
-        <option value="texto">Texto</option>
-        <option value="imagem">Imagem</option>
-        <option value="video">Vídeo</option>
-        <option value="audio">Áudio</option>
-      </select>
-      <br />
-      <br />
-      <label htmlFor="conteudo">Conteúdo:</label>
+      <label htmlFor="arquivo">Arquivo:</label>
       <input
         type="file"
-        id="conteudo"
-        name="conteudo"
+        id="arquivo"
+        name="arquivo"
         onChange={(e) => setFile(e.target.files[0])}
       />
       <br />
